@@ -118,6 +118,7 @@ export default function Login(){
             size="lg"
             placeholder="パスワード"
             id="pass"
+            type="password"
           />
           <Spacer y={1} />
           <Button className="bg-sky-400" type="submit">ログイン</Button>
