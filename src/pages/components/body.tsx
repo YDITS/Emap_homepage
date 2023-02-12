@@ -1,14 +1,12 @@
 
-import { Layout } from "./extenstions/boxs";
+import Layout from "./extenstions/boxs";
 import Header from "../header/header";
-import { UserLoginComponent } from "./types/user";
-
-type UserLogin = {
-   user : UserLoginComponent | undefined 
-}
+import User from "../../../types/user";
 
 
-export default function Body({ user } : UserLoginComponent) {
+
+
+export default function Body({ user } : { user : User}) {
     return (
         <Layout>
           <Header user={user}></Header>

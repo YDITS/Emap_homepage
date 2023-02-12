@@ -1,12 +1,15 @@
 
 import React from 'react'
 import Body from './components/body'
-import { useUser } from './components/hooks/login'
-import { User } from "./components/types/user"
+import User from "../../types/user"
+
+import UserLoginHooks from "../../hooks/login"
+
+const Login = new UserLoginHooks()
 
 export default function Home(){
 
-  const { loading, user } = useUser();
+  const { loading, user } = Login.useUser();
 
   const LoadingNow = {
     name : "読み込み中",

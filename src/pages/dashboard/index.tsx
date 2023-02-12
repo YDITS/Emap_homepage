@@ -1,7 +1,9 @@
 
 import { useRouter } from "next/router"
 import { useEffect } from "react"
-import { useUser } from "../components/hooks/login"
+import UserLoginHooks from "../../../hooks/login"
+
+const Login = new UserLoginHooks()
 
 type LoginFormat = {
     user : string;
@@ -20,7 +22,7 @@ type LoginFormat = {
 
 export default function index() {
     const router  = useRouter()
-    const { loading, user } = useUser()
+    const { loading, user } = Login.useUser()
 
 
     const oauth = async () => {

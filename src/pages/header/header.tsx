@@ -1,10 +1,10 @@
 import { Navbar, Text } from "@nextui-org/react";
 import Link from "next/link"
-import { UserLoginComponent } from "../components/types/user";
+import User from "../../../types/user";
 
-type User = { user : UserLoginComponent | undefined }
+type Userlogin = { user : User | undefined }
 
-export default function Header({ user }: UserLoginComponent){
+export default function Header({ user }: Userlogin){
   
     return (
         <Navbar isBordered variant="sticky">

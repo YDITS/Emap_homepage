@@ -1,14 +1,16 @@
-import { Box } from "./components/extenstions/box";
-import { UserLoginComponent , User } from "./components/types/user";
+import Box from "./components/extenstions/box";
+import User from "../../types/user";
 import Header from "./header/header";
 import { Text, Spacer, Container } from "@nextui-org/react"
 import React from "react"; 
-import { useUser } from "./components/hooks/login";
+import UserLoginHooks from "../../hooks/login"
+
+const Login = new UserLoginHooks()
 
 
 export default function About(){
 
-  const { loading, user } = useUser();
+  const { loading, user } = Login.useUser();
 
   const LoadingNow = {
     name : "読み込み中",

@@ -1,8 +1,8 @@
 import { Text, Spacer, Container } from "@nextui-org/react"
 import Link from "next/link"
-import { Box } from "./box"
+import Box from "./box"
 
-export function Content (){
+export default function Content (){
   return(
       <Box css={{px: "$12", mt: "$8", "@xsMax": {px: "$10"}}}>
         <Spacer y={10} />

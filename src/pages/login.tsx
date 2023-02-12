@@ -7,9 +7,12 @@ import {
   Container,
 } from '@nextui-org/react';
 import { useState } from 'react'
-import { setUser } from './components/hooks/login';
-import { User } from './components/types/user';
+import User from '../../types/user';
 import { useRouter } from 'next/router'
+
+import UserLoginHooks from "../../hooks/login"
+
+const LoginHooks = new UserLoginHooks()
 
 type LOGIN = {
     "isError" : boolean 
@@ -68,7 +71,7 @@ export default function Login(){
          const mainUserData = JSON.parse(resData) as LoginFormat
          console.log(mainUserData)
          const saveData = {"name" : mainUserData["user"], "password" : data.pass, "id" : data.id , "logined" : true} as User
-         setUser(saveData).then(() => {
+         LoginHooks.setUser(saveData).then(() => {
           router.push('/')
          })
         } catch (err) {
