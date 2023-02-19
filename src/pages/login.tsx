@@ -6,6 +6,7 @@ import {
   Input,
   Container,
 } from '@nextui-org/react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react'
 import User from '../../types/user';
 import { useRouter } from 'next/router'
@@ -98,7 +99,7 @@ export default function Login(){
               mb: '20px',
             }}
           >
-            {login.isError ? "指定されたユーザーが見つかりません。" : "YDTISアカウントでログイン"}
+            YDTISアカウントでログイン
           </Text>
           <Input
             clearable
@@ -121,7 +122,12 @@ export default function Login(){
             type="password"
           />
           <Spacer y={1} />
-          <Button className="bg-sky-400" type="submit">ログイン</Button>
+        <Button className="bg-sky-400" type="submit">{login.isError ? "ユーザーが存在しません。" : "ログイン"}</Button>
+          <Spacer y={1} />
+          <Button className="bg-blue-800" onClick={() => { location.href="https://api.akikakisan.repl.co/v1/login"} }>
+           <FontAwesomeIcon icon={"discord"}/>
+            Discordでログイン
+          </Button>
         </Card>
        </Container>
       </form>

@@ -9,6 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@fortawesome/free-regular-svg-icons": "^6.3.0",
+    "@fortawesome/free-solid-svg-icons": "^6.3.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@next/font": "13.1.6",
     "@nextui-org/react": "^1.0.0-beta.12",
     "@types/node": "18.13.0",
@@ -16,6 +20,7 @@
     "@types/react": "18.0.27",
     "@types/react-dom": "18.0.10",
     "next": "13.1.6",
+    "next-themes": "^0.2.1",
     "nprogress": "^0.2.0",
     "p2peq_event": "^3.0.1",
     "react": "18.2.0",

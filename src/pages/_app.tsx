@@ -2,7 +2,8 @@ import '@/styles/globals.css'
 
 import type { AppProps } from 'next/app'
 
-import { createTheme , NextUIProvider } from '@nextui-org/react'
+import { createTheme , NextUIProvider ,  } from '@nextui-org/react'
+import { ThemeProvider as NextThemesProvider } from "next-themes"
 
 import Router from 'next/router';
 import NProgress from 'nprogress';
@@ -15,7 +16,7 @@ Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
 
-const theme = createTheme({
+const lightTheme = createTheme({
   type: "light",
   theme: {
     colors: {
@@ -26,10 +27,23 @@ const theme = createTheme({
   }
 })
 
+const darkTheme = createTheme({
+  type: "dark",
+})
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <NextUIProvider theme={theme}>
+    <NextThemesProvider
+    defaultTheme="light"
+    attribute="class"
+    value={{
+      light: lightTheme.className,
+      dark: darkTheme.className
+    }}
+  >
+    <NextUIProvider>
       <Component {...pageProps} />
     </NextUIProvider>
+    </NextThemesProvider>
   )
 }

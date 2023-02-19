@@ -24,7 +24,7 @@ export default class UserLoginHooks {
             loading,
           };
       };
-
+      //* Default Export
       setUser(user : User) : Promise<void> {
         return new Promise<void>((resolve, reject) => {
           const _userData = {

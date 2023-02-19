@@ -1,11 +1,19 @@
-import { Navbar, Text } from "@nextui-org/react";
+import { Navbar,
+   Text,
+   Switch,
+   useTheme
+     } from "@nextui-org/react";
+import { useTheme as useNextTheme } from 'next-themes'
 import Link from "next/link"
 import User from "../../../types/user";
 
 type Userlogin = { user : User | undefined }
 
 export default function Header({ user }: Userlogin){
-  
+
+  const { setTheme } = useNextTheme();
+  const { isDark } = useTheme();
+
     return (
        <div>
         <Navbar isBordered variant="sticky">
@@ -15,12 +23,7 @@ export default function Header({ user }: Userlogin){
               </Text>
             </Navbar.Brand>
           <Navbar.Content hideIn="xs">
-            <Navbar.Link href="#"></Navbar.Link>
-            </Navbar.Content>
-            <Navbar.Content>
-                <Link href={user == null ? "/login" : user?.logined ? `dashboard/index?id=${user.id}` : "/login"}>
-                {user == null ? "YDITSアカウントでログイン" : user?.logined ? "元気してる？"+user?.name+"さん！" : "YDITSアカウントでログイン"}
-                </Link>
+            <Link href="/"> ホーム </Link>
             </Navbar.Content>
         </Navbar>
        </div>
@@ -28,7 +31,11 @@ export default function Header({ user }: Userlogin){
 }
 
 /**
-
+            <Navbar.Content>
+                <Link href={user == null ? "/login" : user?.logined ? `dashboard/index?id=${user.id}` : "/login"}>
+                {user == null ? "YDITSアカウントでログイン" : user?.logined ? "元気してる？"+user?.name+"さん！" : "YDITSアカウントでログイン"}
+                </Link>
+            </Navbar.Content>
  */
 
 /**
