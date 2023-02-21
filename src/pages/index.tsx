@@ -26,6 +26,7 @@ export default function Home(){
 } as User 
 
   return (
+
     <div>
         <Body user={loading ? LoadingNow : user === undefined ? ReqLogin : user}></Body>
     </div>

@@ -3,6 +3,7 @@ import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 
 import { createTheme , NextUIProvider ,  } from '@nextui-org/react'
+import '@fortawesome/fontawesome-svg-core/styles.css'
 import { ThemeProvider as NextThemesProvider } from "next-themes"
 
 import Router from 'next/router';
