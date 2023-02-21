@@ -29,8 +29,6 @@ export default function About () {
   logined : false
 } as User 
 
-const text = "nube"
-
     return (
       <div>
         <Box>

@@ -24,10 +24,7 @@ export default function Download(){
                    Windows
                 </Text>
                 <div className='text-center'>
-                  <Link href="/windows" className="text-lg  h-5 w-5 ml-2 -mr-1">
-                   <FontAwesomeIcon icon={faDownload} />
-                     Download
-                  </Link>
+                   Sorry, We are under the production...
                 </div>
               </div>
             </Box>
@@ -35,3 +32,8 @@ export default function Download(){
          </div>
      )
 }
+
+//<Link href="/windows" className="text-lg  h-5 w-5 ml-2 -mr-1">
+//<FontAwesomeIcon icon={faDownload} />
+//Download
+//</Link>
