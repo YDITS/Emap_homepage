@@ -2,17 +2,13 @@ import Content from "./content"
 import Box from "./box"
 import { JsxElement } from "typescript";
 
-type Child = { 
-    children: any
-}
 
-const Layout = ({ children } : Child) => (
+const Layout = () => (
   <Box
     css={{
       maxW: "100%"
     }}
   >
-    {children}
     <Content />
   </Box>
 );

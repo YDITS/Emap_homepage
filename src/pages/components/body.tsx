@@ -5,11 +5,9 @@ import User from "../../../types/user";
 
 
 
-
+//<Header user={user}></Header>
 export default function Body({ user } : { user : User}) {
     return (
-        <Layout>
-          <Header user={user}></Header>
-        </Layout>
+        <Layout />
     )
 }

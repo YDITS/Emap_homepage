@@ -1,39 +1,17 @@
-import Box from "./components/extenstions/box";
-import User from "../../types/user";
-import Header from "./header/header";
+import Box from "./box";
 import { Text, Spacer, Container } from "@nextui-org/react"
 import React from "react"; 
-import UserLoginHooks from "../../hooks/login"
-import LinkCard from "./components/card"
 import Image from "next/image";
 import Download from "./download";
 
-const Login = new UserLoginHooks()
 
 
 export default function About () {
 
-  const { loading, user } = Login.useUser();
-
-  const LoadingNow = {
-    name : "読み込み中",
-    id : "LOAD", 
-    password : "LOADINF",
-    logined : true
- } as User 
-
- const ReqLogin = {
-  name : "読み込み中",
-  id : "LOAD",
-  password : "LOADINF",
-  logined : false
-} as User 
-
     return (
       <div>
         <Box>
-         <Header user={loading ? LoadingNow : user === undefined ? ReqLogin : user}></Header>
-          <Container className="mt-50">
+          <Container css={{px: "$12", mt: "$8", "@xsMax": {px: "$10"}}} className="mt-50">
               <Spacer y={3} />
               <Text
               h1
