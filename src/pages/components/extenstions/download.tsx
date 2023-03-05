@@ -47,9 +47,9 @@ export default function Download(){
                   <Spacer y={2} />
                    Windows
                 </Text>
-                <div className='text-center'>
-                   Sorry, We are under the production...
-                </div>
+                <Link href="https://drive.google.com/file/d/1rne3Ns4woBd8gRwuB2xTtAEyAvZBGv-h/view?usp=share_link" className="text-center">
+                   ここからダウンロードできます。
+                </Link>
               </div>
             </Box>
             <Spacer y={2} />
